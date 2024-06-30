@@ -1,0 +1,40 @@
+import random
+#Game Rules
+print("Winning Rules Of The Game ROCK-PAPER-SCISSORS are : ")
+print("Rock vs Scissors -> Rock Wins ")
+print("Rock vs Paper -> Paper Wins ")
+print("Paper vs Scissors -> Scissors Wins ")
+print("Let's Play a Game!..... \n")
+while True:
+    print("Enter Your Choice \n 1 - Rock \n 2 - Paper \n 3 - Scissors \n")
+    choice =int(input("Enter Your Choice : "))
+    while choice > 3 or choice < 1:
+        choice=int(input("Enter a valid choice Please!"))
+    if choice==1:
+        choice_name="Rock"
+    elif choice==2:
+        choice_name="Paper"
+    else :
+        choice_name="Scissors"
+    print("User choice is \n",choice_name)
+    options=["Rock","Paper","Scissors"]
+    print("Now It's Computers Turn . . . .")
+#computer selection
+    computer_choice=random.choice(options)
+    print("Computer choice is \n",computer_choice)
+    print(choice_name,'Vs',computer_choice)
+    if choice_name==computer_choice:
+        print("It's a Tie\n")
+    elif choice_name=="Rock" and computer_choice=="Scissors":
+        print("You Win!\n")
+    elif choice_name=="Scissors" and computer_choice=="Paper":
+        print("You Win!\n")
+    elif choice_name=="Paper" and computer_choice=="Rock":
+        print("You Win!\n")
+    else:
+        print("Computer Wins .....\n")
+    next_game=input("Do You Want To Play Again ? (Yes/No) : \n")
+    if next_game=="No":
+        break
+print("Thanks for Playing")
+
